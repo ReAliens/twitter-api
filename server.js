@@ -24,6 +24,10 @@ app.use(cookieParser());
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 
+app.get("/", (req, res) => {
+  res.json({ message: "Welcome to our API" });
+});
+
 app.listen(port, () => {
   console.log("listening on server 8080");
   connectMongo();
