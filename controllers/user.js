@@ -6,7 +6,7 @@ import bcrypt from "bcryptjs";
 export const getAllUsers = async (req, res, next) => {
   try {
     const users = await User.find().select("-password");
-    res.status(200).send({ data: users });
+    res.send({ data: users });
   } catch (error) {
     console.log("Error in user controller", error.message);
     res.status(500).json({ error: "Internal Server Error" });

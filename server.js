@@ -28,6 +28,14 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to our API" });
 });
 
+app.get("/parent", (req, res) => {
+  res.send("This is the parent route");
+});
+
+app.get("/parent/child", (req, res) => {
+  res.send("This is the child route");
+});
+
 app.listen(port, () => {
   console.log("listening on server 8080");
   connectMongo();
